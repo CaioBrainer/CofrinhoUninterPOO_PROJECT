@@ -15,7 +15,7 @@ public class Main {
         Cofrinho cofrinho = new Cofrinho(minhasMoedas);
 
         // Criando o menu
-        Menu menu = new Menu();
+        Menu menu = Menu.getInstancia();
         menu.exibirMenu(cofrinho);
     }
 }

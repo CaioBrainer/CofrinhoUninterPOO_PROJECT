@@ -1,10 +1,29 @@
 package uninter;
 import java.util.Scanner;
 
+// Classe menu, implementada utilizando o padrão de desing 'Singleton' apresentado na aula 6.
+/**
+ * Classe que irá gerar o objeto que exibe o menu com as opções do Cofrinho.
+ * */
 public class Menu {
 
+    private static Menu instancia = null;
     private boolean encerrar = false;
     private Scanner teclado = new Scanner(System.in);
+
+    // construtor privado da classe
+    private Menu() {}
+
+    // metodo estático para criar a instancia..
+    public static Menu getInstancia() {
+        if (instancia == null) {
+                if (instancia == null) {  // Double-check locking
+                    instancia = new Menu();
+                }
+        }
+        return instancia;
+    }
+
 
     /**
      * Exibe o menu com as opções da classe cofrinho.
